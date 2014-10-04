@@ -9,7 +9,6 @@ defmodule ForecastIO do
     System.get_env("FORECAST_IO_KEY")
   end
 
-
   def forecast(latlong) do
     response = get(latlong)
     if HTTPotion.Response.success?(response) do
@@ -17,5 +16,9 @@ defmodule ForecastIO do
     else
       {:error, response.body}
     end
+  end
+
+  def current(result) do
+    result["currently"]
   end
 end
