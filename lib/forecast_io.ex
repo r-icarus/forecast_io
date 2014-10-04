@@ -1,10 +1,12 @@
 defmodule ForecastIO do
   use HTTPotion.Base
 
-  @api_key "API_KEY"
-
   def process_url(url) do
-    "https://api.forecast.io/forecast/" <> @api_key <> "/" <> url
+    "https://api.forecast.io/forecast/" <> key <> "/" <> url
+  end
+
+  def key do
+    System.get_env("FORECAST_IO_KEY")
   end
 
 
