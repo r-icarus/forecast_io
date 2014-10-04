@@ -1,4 +1,4 @@
 ForecastIO
 ==========
 
-** TODO: Add description **
+Simple wrapper for Forecast.IO
