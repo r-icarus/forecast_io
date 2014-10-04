@@ -21,4 +21,17 @@ defmodule ForecastIO do
   def current(result) do
     result["currently"]
   end
+
+  def current_celsius(result) do
+    temperature = to_celsius(current(result)["temperature"])
+    apparent = to_celsius(current(result)["apparentTemperature"])
+    dew_point = to_celsius(current(result)["dewPoint"])
+    Map.merge(current(result), %{"temperature" => temperature,
+      "apparentTemperature" => apparent,
+      "dewPoint" => dew_point})
+  end
+
+  def to_celsius(farenheit) do
+    (farenheit - 32.0) * (5.0/9.0)
+  end
 end
