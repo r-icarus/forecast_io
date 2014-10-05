@@ -15,8 +15,8 @@ defmodule ForecastIOTest do
   test "should convert to celsius" do
     result = %{"currently" => %{ "temperature" => 86.0, "apparentTemperature" => 86.0, "dewPoint" => 86.0 }}
     current = ForecastIO.current_celsius(result)
-    assert 30.0 = current["temperature"]
-    assert 30.0 = current["apparentTemperature"]
-    assert 30.0 = current["dewPoint"]
+    assert 30.0 = current["temperatureCelsius"]
+    assert 30.0 = current["apparentTemperatureCelsius"]
+    assert 30.0 = current["dewPointCelsius"]
   end
 end
