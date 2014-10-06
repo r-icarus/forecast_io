@@ -9,8 +9,8 @@ defmodule ForecastIO do
     System.get_env("FORECAST_IO_KEY")
   end
 
-  def forecast(latlong) do
-    response = get(latlong)
+  def forecast(latlong, lang \\ "en") do
+    response = get(latlong <> "?lang=" <> lang)
     if HTTPotion.Response.success?(response) do
       JSON.decode(response.body)
     else
