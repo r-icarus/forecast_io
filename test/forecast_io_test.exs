@@ -13,16 +13,18 @@ defmodule ForecastIOTest do
   end
 
   test "you can select a language supported by forecast io" do
-    {:ok, result } = ForecastIO.forecast("28.6353,-106.0889", "es")
+    {:ok, result } = ForecastIO.forecast("28.6353,-106.0889", %ForecastIO.Options{lang: "es"})
     current = ForecastIO.current(result)
     assert true = is_float current["temperature"]
   end
 
   test "should convert to celsius" do
-    result = %{"currently" => %{ "temperature" => 86.0, "apparentTemperature" => 86.0, "dewPoint" => 86.0 }}
-    current = ForecastIO.current_celsius(result)
-    assert 30.0 = current["temperatureCelsius"]
-    assert 30.0 = current["apparentTemperatureCelsius"]
-    assert 30.0 = current["dewPointCelsius"]
+    result = ForecastIO.to_celsius(86.0)
+    assert 30.0 = result
+  end
+
+  test "should convert to farenheit" do
+    result = ForecastIO.to_farenheit(30.0)
+    assert 86.0 = result
   end
 end
