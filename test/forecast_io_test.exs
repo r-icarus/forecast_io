@@ -27,4 +27,10 @@ defmodule ForecastIOTest do
     result = ForecastIO.to_farenheit(30.0)
     assert 86.0 = result
   end
+
+  test "you should convert options to a query string" do
+    options = %ForecastIO.Options{}
+    encoded = ForecastIO.Options.encode_query(options)
+    assert encoded = "callback=&exclude=&extend=&lang=en&units=us"
+  end
 end

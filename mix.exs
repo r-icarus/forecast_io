@@ -3,7 +3,7 @@ defmodule ForecastIO.Mixfile do
 
   def project do
     [app: :forecast_io,
-     version: "0.0.3",
+     version: "0.0.4",
      elixir: "~> 1.0.0",
      deps: deps]
   end

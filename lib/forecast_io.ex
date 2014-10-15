@@ -10,7 +10,7 @@ defmodule ForecastIO do
   end
 
   def forecast(latlong, options \\ %ForecastIO.Options{} )do
-    response = get(latlong <> "?lang=" <> options.lang <> "&units=" <> options.units )
+    response = get(latlong <> "?" <> ForecastIO.Options.encode_query(options) )
     if HTTPotion.Response.success?(response) do
       JSON.decode(response.body)
     else
