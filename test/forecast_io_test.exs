@@ -2,18 +2,28 @@ defmodule ForecastIOTest do
   use ExUnit.Case
 
   test "the result should be a decoded json object" do
-    assert {:ok, result } = ForecastIO.forecast("28.6353,-106.0889")
+    assert {:ok, result } = ForecastIO.forecast("28.6353","-106.0889")
     assert false = Enum.empty?(result)
   end
 
   test "result should have the current temperature" do
-    {:ok, result } = ForecastIO.forecast("28.6353,-106.0889")
+    {:ok, result } = ForecastIO.forecast("28.6353","-106.0889")
     current = ForecastIO.current(result)
     assert true = is_float current["temperature"]
   end
 
+  test "you can also use float numbers as params" do
+    assert {:ok, result } = ForecastIO.forecast(28.6353,-106.0889)
+    assert false = Enum.empty?(result)
+  end
+
+  test "you can also use float numbers as params with options" do
+    assert {:ok, result } = ForecastIO.forecast(28.6353,-106.0889, %ForecastIO.Options{ lang: "es"})
+    assert false = Enum.empty?(result)
+  end
+
   test "you can select a language supported by forecast io" do
-    {:ok, result } = ForecastIO.forecast("28.6353,-106.0889", %ForecastIO.Options{lang: "es"})
+    {:ok, result } = ForecastIO.forecast("28.6353","-106.0889", %ForecastIO.Options{lang: "es"})
     current = ForecastIO.current(result)
     assert true = is_float current["temperature"]
   end
@@ -30,7 +40,6 @@ defmodule ForecastIOTest do
 
   test "you should convert options to a query string" do
     options = %ForecastIO.Options{}
-    encoded = ForecastIO.Options.encode_query(options)
-    assert encoded = "callback=&exclude=&extend=&lang=en&units=us"
+    assert "callback=&exclude=&extend=&lang=en&units=us" = ForecastIO.Options.encode_query(options)
   end
 end
