@@ -3,9 +3,17 @@ defmodule ForecastIO.Mixfile do
 
   def project do
     [app: :forecast_io,
-     version: "0.0.5",
+     version: "0.1.0",
      elixir: "~> 1.0.0",
-     deps: deps]
+     deps: deps,
+     package: [
+       contributors: ["Ricardo Echavarria"],
+       licenses: ["MIT"],
+       links: %{github: "https://github.com/r-icarus/forecast_io"}
+     ],
+     description: """
+     Simple wrapper for Forecast.IO API
+     """]
   end
 
   # Configuration for the OTP application
