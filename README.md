@@ -22,7 +22,7 @@ end
 #Start and use
 ```elixir
 ForecastIO.start()
-{:ok, result } = ForecastIO.forecast("28.6353,-106.0889")
+{:ok, result } = ForecastIO.forecast("28.6353","-106.0889")
 current = ForecastIO.current(result)
 ```
 
@@ -31,6 +31,6 @@ current = ForecastIO.current(result)
 {mega, secs, _ } = :erlang.now
 now = mega * 1000000 + secs
 ForecastIO.start()
-{:ok, result } = ForecastIO.forecast_time("28.6353,-106.0889", now)
+{:ok, result } = ForecastIO.forecast_time("28.6353","-106.0889", now)
 current = ForecastIO.current(result)
 ```
