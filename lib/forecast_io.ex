@@ -26,6 +26,24 @@ defmodule ForecastIO do
     forecast( latitude, longitude , options)
   end
 
+  def forecast_time(lat, long, time, options \\ %ForecastIO.Options{} )
+
+  def forecast_time(lat, long, time, options) when is_binary(lat) and is_binary(long) and is_integer(time) do
+    date = Integer.to_string(time)
+    response = get(lat<> "," <> long <> "," <> date <> "?" <> ForecastIO.Options.encode_query(options) )
+    if HTTPotion.Response.success?(response) do
+      JSON.decode(response.body)
+    else
+      {:error, response.body}
+    end
+  end
+
+  def forecast_time(lat, long, time, options) when is_float(lat) and is_float(long) and is_integer(time) do
+    latitude = Float.to_string(lat, [decimals: 8])
+    longitude = Float.to_string(long, [decimals: 8])
+    forecast_time( latitude, longitude , time, options)
+  end
+
   def current(result) do
     result["currently"]
   end
