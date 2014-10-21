@@ -33,8 +33,8 @@ defmodule ForecastIOTest do
     assert 30.0 = result
   end
 
-  test "should convert to farenheit" do
-    result = ForecastIO.to_farenheit(30.0)
+  test "should convert to fahrenheit" do
+    result = ForecastIO.to_fahrenheit(30.0)
     assert 86.0 = result
   end
 
