@@ -48,11 +48,11 @@ defmodule ForecastIO do
     result["currently"]
   end
 
-  def to_celsius(farenheit) do
-    (farenheit - 32.0) * (5.0/9.0)
+  def to_celsius(fahrenheit) do
+    (fahrenheit - 32.0) * (5.0/9.0)
   end
 
-  def to_farenheit(celsius) do
+  def to_fahrenheit(celsius) do
     ((celsius) * (9.0/5.0)) + 32
   end
 
