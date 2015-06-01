@@ -28,7 +28,7 @@ current = ForecastIO.current(result)
 
 #Use ForecastIO Time API
 ```elixir
-{mega, secs, _ } = :erlang.now
+{mega, secs, _ } = :os.timestamp
 now = mega * 1000000 + secs
 ForecastIO.start()
 {:ok, result } = ForecastIO.forecast_time("28.6353","-106.0889", now)
