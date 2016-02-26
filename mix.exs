@@ -3,8 +3,8 @@ defmodule ForecastIO.Mixfile do
 
   def project do
     [app: :forecast_io,
-     version: "0.2.1",
-     elixir: "~> 1.0.0",
+     version: "0.2.2",
+     elixir: "~> 1.2.0",
      deps: deps,
      package: [
        contributors: ["Ricardo Echavarria"],
@@ -34,9 +34,8 @@ defmodule ForecastIO.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
-      {:httpotion, "~> 0.2.0"},
-      { :json,   "~> 0.3.0"},
+      {:httpotion, "~> 2.0"},
+      {:json,   "~> 0.3.0"},
     ]
   end
 end

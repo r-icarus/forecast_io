@@ -1,5 +1,4 @@
 defmodule ForecastIO.Options do
-  @derive [Enumerable]
   defstruct lang: "en", units: "us", callback: nil,
     exclude: nil, exclude: nil, extend: nil
 

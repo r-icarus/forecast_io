@@ -5,7 +5,7 @@ defmodule ForecastIOTimeTest do
     {mega, secs, _ } = :os.timestamp
     now = mega * 1000000 + secs
     assert {:ok, result } = ForecastIO.forecast_time("28.6353","-106.0889",now)
-    assert false = Enum.empty?(result)
+    assert false == Enum.empty?(result)
   end
 
 
@@ -13,6 +13,6 @@ defmodule ForecastIOTimeTest do
     {mega, secs, _ } = :os.timestamp
     now = mega * 1000000 + secs
     assert {:ok, result } = ForecastIO.forecast_time(28.6353, -106.0889, now)
-    assert false = Enum.empty?(result)
+    assert false == Enum.empty?(result)
   end
 end
