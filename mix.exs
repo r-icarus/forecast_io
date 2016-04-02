@@ -7,7 +7,8 @@ defmodule ForecastIO.Mixfile do
      elixir: "~> 1.2.0",
      deps: deps,
      package: [
-       contributors: ["Ricardo Echavarria"],
+       contributors: ["Ricardo Echavarria", "Col", "Ross Jones", "Jeff Weiss"],
+       maintainers: ["Ricardo Echavarria"],
        licenses: ["MIT"],
        links: %{github: "https://github.com/r-icarus/forecast_io"}
      ],
