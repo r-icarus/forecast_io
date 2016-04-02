@@ -10,11 +10,11 @@ Simple wrapper for Forecast.IO
 export FORECAST_IO_KEY=yourkey
 ```
 
-##Include  ibrowse
+##Include forecast_io
 ```elixir
 defp deps do
   [
-    {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.0"},
+    {:forecast_io, "~> 0.2.2"},
   ]
 end
 ```

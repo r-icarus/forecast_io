@@ -3,7 +3,7 @@ defmodule ForecastIOTest do
 
   test "the result should be a decoded json object" do
     assert {:ok, result } = ForecastIO.forecast("28.6353","-106.0889")
-    assert false = Enum.empty?(result)
+    assert false == Enum.empty?(result)
   end
 
   test "result should have the current temperature" do
@@ -14,12 +14,12 @@ defmodule ForecastIOTest do
 
   test "you can also use float numbers as params" do
     assert {:ok, result } = ForecastIO.forecast(28.6353,-106.0889)
-    assert false = Enum.empty?(result)
+    assert false == Enum.empty?(result)
   end
 
   test "you can also use float numbers as params with options" do
     assert {:ok, result } = ForecastIO.forecast(28.6353,-106.0889, %ForecastIO.Options{ lang: "es"})
-    assert false = Enum.empty?(result)
+    assert false == Enum.empty?(result)
   end
 
   test "you can select a language supported by forecast io" do
