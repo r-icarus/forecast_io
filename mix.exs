@@ -4,7 +4,7 @@ defmodule ForecastIO.Mixfile do
   def project do
     [app: :forecast_io,
      version: "0.2.2",
-     elixir: "~> 1.2.0",
+     elixir: "~> 1.4.0",
      deps: deps,
      package: [
        contributors: ["Ricardo Echavarria", "Col", "Ross Jones", "Jeff Weiss"],

@@ -1,5 +1,5 @@
-%{"httpotion": {:hex, :httpotion, "2.2.0"},
-  "ibrowse": {:hex, :ibrowse, "4.2.2"},
-  "json": {:hex, :json, "0.3.2"},
+%{"httpotion": {:hex, :httpotion, "2.2.0", "3ae856194a2cbb1270bb57e246078d6c5f31580a8913d0d4957c142487d96d0f", [:mix], [{:ibrowse, "~> 4.2", [hex: :ibrowse, repo: "hexpm", optional: false]}], "hexpm"},
+  "ibrowse": {:hex, :ibrowse, "4.2.2", "b32b5bafcc77b7277eff030ed32e1acc3f610c64e9f6aea19822abcadf681b4b", [:rebar3], [], "hexpm"},
+  "json": {:hex, :json, "0.3.2", "e40a15993024a0cb4f5e22816d6be34002cc4463c61789ed35ec94c41911ebee", [:mix], [], "hexpm"},
   "jsonex": {:git, "git://github.com/marcelog/jsonex.git", "746c8492d66e130ee74cb2d857f8458fe3a2c0e2", [tag: "2.0"]},
   "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "cb14b92a228e51f7bdcaa7eb17f035e4a5c0b47d", [tag: "v1.3.3"]}}
